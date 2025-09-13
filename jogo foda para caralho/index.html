@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roleta e Loja TF2</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Roleta e Loja TF2</h1>
+
+<div id="refinadoContainer">
+  <img src="refinado.png" alt="Refinado">
+  <span id="refinadoAmount">0</span>
+</div>
+
+<div id="videoContainer">
+  <video id="boxVideo" muted></video>
+  <img id="itemImg" src="">
+  <div id="itemName"></div>
+  <button id="sellBtn">Vender</button>
+  <button id="storeBtn">Guardar</button>
+  <button id="discardBtn">Descartar</button>
+  <button id="testBtn">Testar Arma</button>
+</div>
+
+<button id="openBtn">Abrir Caixa</button>
+
+<audio id="notificationSound" src="Notification_alert.wav"></audio>
+<audio id="openCrateSound" src="Item_open_crate.wav"></audio>
+
+<div id="shop">
+  <h2>Loja</h2>
+  <div class="shopItem">
+    <img src="oitão.png" alt="OitãoFoda">
+    <span>OitãoFoda - 2000 Refinados</span>
+    <button id="buyOitao">Comprar</button>
+  </div>
+  <div class="shopItem" id="valveShop" style="display:none;">
+    <img src="valve.jpg" alt="Valve">
+    <span>Valve - 3 Panelas Douradas</span>
+    <button id="buyValve">Comprar</button>
+  </div>
+</div>
+
+<h2>Mochila</h2>
+<div id="mochila"></div>
+
+<div id="alertBox"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

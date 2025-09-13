@@ -1,0 +1,228 @@
+/* ================= Reset Básico e Estilos Gerais ================= */
+* {
+  box-sizing: border-box; /* Garante que padding e borda não aumentem o tamanho final do elemento */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden; /* Previne a barra de rolagem horizontal */
+}
+
+h1 {
+  margin-top: 20px;
+  color: #ffcc00;
+  text-shadow: 2px 2px 5px #000;
+}
+
+/* ================= Container do Vídeo Responsivo ================= */
+#videoContainer {
+  position: relative;
+  
+  /* --- TAMANHO AJUSTADO PARA NÃO FICAR GIGANTE --- */
+  width: 85vw;              /* Tenta ocupar 85% da largura da tela (viewport width) */
+  max-width: 1000px;        /* Mas não passará de 1000px de largura */
+  max-height: 70vh;         /* E o mais importante: não passará de 70% da altura da tela (viewport height) */
+  aspect-ratio: 16 / 9;     /* Mantém a proporção 16:9, calculando a dimensão faltante */
+
+  background-color: #000;
+  margin-top: 20px;
+  border: 3px solid #ffcc00;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px #ffcc00;
+  overflow: hidden;
+}
+
+video#boxVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+img#itemImg {
+  max-width: 50%;
+  max-height: 50%;
+  position: absolute;
+  display: none;
+  z-index: 2;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
+}
+
+#itemName {
+  position: absolute;
+  top: 10%;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  text-shadow: 3px 3px 6px #000;
+  display: none;
+  z-index: 2;
+  color: #00ffcc;
+}
+
+/* ================= Botões ================= */
+#sellBtn, #storeBtn, #discardBtn, #testBtn {
+  position: absolute;
+  bottom: 15%; /* Ajustado para melhor visualização */
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2;
+  display: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffcc00;
+  color: #111;
+  box-shadow: 0 0 10px #000;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#sellBtn:hover, #storeBtn:hover, #discardBtn:hover, #testBtn:hover {
+  background-color: #ffaa00;
+  transform: scale(1.05);
+}
+
+button#openBtn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffcc00;
+  color: #111;
+  box-shadow: 0 0 10px #000;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button#openBtn:hover {
+  background-color: #ffaa00;
+  transform: scale(1.05);
+}
+
+/* ================= UI (Refinados, Loja, Mochila) ================= */
+#refinadoContainer {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#refinadoContainer img {
+  width: 60px;
+  height: 60px;
+}
+
+/* Loja e Mochila agora são responsivas */
+#shop, #mochilaContainer {
+  width: 90%;             /* Ocupa 90% da largura da tela */
+  max-width: 600px;       /* Limite de largura para não ficar muito largo */
+  margin-top: 25px;
+  border: 3px solid #ffcc00;
+  padding: 20px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #222, #333);
+  box-shadow: 0 0 20px #ffcc00;
+}
+
+#shop h2, #mochilaContainer h2 {
+  text-align: center;
+  color: #ffcc00;
+  text-shadow: 2px 2px 4px #000;
+  margin-top: 0;
+}
+
+.shopItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: #1a1a1a;
+  box-shadow: inset 0 0 10px #000;
+}
+
+.shopItem img {
+  width: 70px;
+  height: 70px;
+}
+
+.shopItem span {
+  flex: 1;
+  margin-left: 15px;
+  font-size: 18px;
+}
+
+.shopItem button {
+  padding: 8px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffcc00;
+  color: #111;
+  box-shadow: 0 0 10px #000;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.shopItem button:hover {
+  background-color: #ffaa00;
+  transform: scale(1.05);
+}
+
+#mochila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espaçamento entre os itens */
+  min-height: 60px;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+  justify-content: center; /* Centraliza os itens quando não preenchem a linha */
+}
+
+/* ================= Notificação ================= */
+#alertBox {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(20, 20, 20, 0.95);
+  color: #ffcc00;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 0 15px #000;
+  border: 2px solid #ffcc00;
+  z-index: 9999;
+  max-width: 280px;
+  text-align: center;
+  opacity: 0;
+  transform: translateX(120%);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#alertBox.show {
+  opacity: 1;
+  transform: translateX(0);
+}
